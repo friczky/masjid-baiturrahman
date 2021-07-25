@@ -120,6 +120,7 @@ class Home extends CI_Controller {
 		$data['tentang'] 	= $this->db->where('id','1')->get('tb_sejarah')->row_array();
 		$data['berita1']   = $this->db->order_by('id','desc')->get('tb_blog',2)->result();
 		$data['kajian2'] 	= $this->db->order_by('id','desc')->get('tb_kajian',2)->result();
+		$data['kategori']	= $this->db->order_by('kategori','asc')->get('tb_kategori_galeri')->result();
 		$this->load->view('frontend/gallery',$data);
 	}
 }

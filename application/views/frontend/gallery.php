@@ -21,14 +21,10 @@ include 'komponen/navbar.php'
 	<div class="gallery-section padding-tb">
         <div class="container">
             <ul class="filter-button-group lab-ul d-flex justify-content-center mb-4">
-                <li class="filter-btn is-checked" data-filter="*">SEMUA <span class="filter-item-num">00</span></li>
-                <li class="filter-btn" data-filter=".kajian">Kajian <span class="filter-item-num">00</span>
-                </li>
-                <li class="filter-btn" data-filter=".idul-adha">Idul Adha <span class="filter-item-num">00</span>
-                </li>
-                <li class="filter-btn" data-filter=".idul-fitri">Idul Fitri <span class="filter-item-num">00</span></li>
-                <li class="filter-btn" data-filter=".ramadhan">Ramadhan <span class="filter-item-num">00</span>
-                </li>
+                <li class="filter-btn is-checked" data-filter="*">SEMUA <span class="filter-item-num">+</span></li>
+				<?php foreach ( $kategori as $k){?>
+                <li class="filter-btn" data-filter=".<?= $k->kategori?>"><?= $k->kategori?> <span class="filter-item-num">+</span></li>
+				<?php }?>
             </ul>
             <div class="grid pb-15" style="position: relative; height: 3144.25px;">
 			<?php foreach($foto->result() as $foto) {?>

@@ -36,11 +36,11 @@ $this->load->view('admin/komponen/sidebar');
 									<div class="form-group">
                     <label for="">Kategori</label>
                     <select name="kategori" id="" class="form-control">
-											<option value="kajian">Kajian</option>
-											<option value="idul-fitri">Idul Fitri</option>
-											<option value="idul-adha">Idul Adha</option>
-											<option value="ramadhan">Ramadhan</option>
+											<?php foreach ($kategori as $k){?>
+												<option value="<?= $k->kategori?>" id=""><?= $k->kategori?></option>
+											<?php } ?>
 										</select>
+										<a href="">Tambah Kategori</a>
                   </div>
                   <div class="form-group">
                     <label for="">Deskripsi</label>

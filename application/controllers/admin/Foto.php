@@ -12,14 +12,15 @@ class Foto extends CI_Controller {
 
     public function index()
         {
-        	$data['foto']   = $this->db->order_by('id','desc')->get('tb_foto');
+        	$data['foto']  	 	= $this->db->order_by('id','desc')->get('tb_foto');
+			$data['kategori']	= $this->db->order_by('kategori','asc')->get('tb_kategori_galeri')->result();
             $this->load->view('admin/v_foto',$data);
         }
 
     public function store(){
         $upload_foto = $_FILES['file'];
             if ($upload_foto) {
-                $config['allowed_types'] = 'jpg|png|gif';
+                $config['allowed_types'] = 'jpg|png|gif|jpeg';
                 $config['max_size'] = '0';
                 $config['upload_path'] = './uploads/galery/';
                 $this->upload->initialize($config);
@@ -80,6 +81,15 @@ class Foto extends CI_Controller {
         $this->session->set_flashdata('sukses','<div class="alert alert-success"> Berhasil Menghapus Foto !</div>');
         redirect(base_url('admin/foto'));
     }
+
+	public function store_kategori(){
+		$data = [
+			'kategori'	= $this->input->post('kategori'),
+		];
+
+		$this->db->insert('tb_kategori_galeri');
+	}
+
 }
         
     /* End of file  User.php */

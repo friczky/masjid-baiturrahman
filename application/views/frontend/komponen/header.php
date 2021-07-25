@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="<?= base_url()?>assets/frontend/css/lightcase.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/frontend/css/swiper.min.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/frontend/css/style.css">
+
+	
 </head>
+
+
 
 <body>
 
