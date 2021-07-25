@@ -84,7 +84,7 @@ class Foto extends CI_Controller {
 
 	public function store_kategori(){
 		$data = [
-			'kategori'	= $this->input->post('kategori'),
+			'kategori'	=> $this->input->post('kategori'),
 		];
 
 		$this->db->insert('tb_kategori_galeri');
